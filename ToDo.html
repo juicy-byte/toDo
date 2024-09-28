@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+    <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="todo-cardbody">
+        <div class="todo-card">
+            <div class="navbar-container">
+                <div class="home-navigator">
+                    <h1>ToDo</h1>
+                </div>
+                <div class="profile-and-time">
+                    <div class="user-profile">
+                        <h5>
+                            Hello, Juice! <span><i class="fa-solid fa-angle-down"></i></span>
+                        </h5>
+                   </div>
+                    <div id="clock">  
+                        <h1 class="clock" id="dateTime"></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="todo-container">
+    
+    
+                <!-- remaining to do
+                put a scroll on the li and textarea linebreak -->
+                <div class="task-filter-container">
+                    <div>
+                        <div>
+                            <h4> List of tasks</h4>
+                        </div>
+                        <div class="filter-container">
+                            <button class="filter filter-all" type="button" id="filterAll">ALL</button>
+                            <button class="filter filter-completed" id="filterCompleted">COMPLETED</button>
+                            <button class="filter filter-pending" id="filterPending">PENDING</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="checking">
+                <ul id="todosList" class="todo-list">
+                    <!-- <li id="todoItem" class="todo-item">
+                        <p>go to the market and buy vegetables for soup.</p> 
+                        <div class="li-button-container">
+                            <button class="completed-btn">completed</button>
+                            <button class="delete-btn">delete</button>
+                        </div>
+                    </li> -->
+
+             
+            
+                </ul>
+            </div>
+            <div class="input-container"id="inputContainer">
+                <input class="todo-inputArea" type="text" id="todoInput" placeholder="What do you want to do today?">
+                <button id="addTodoBtn">Add Todo</button>
+            </div>
+            <div class="add--new-task-btn" id="addNewTask">
+                <button>Add new task</button>
+            </div>
+        
+            <!-- </div> -->
+    
+        </div>
+    </div>
+
+
+
+    <script src="todo.js"></script>
+</body>
+
+</html>
