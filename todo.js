@@ -16,7 +16,6 @@ function addTodo(){
             text: todoInputValue,
             completed: false
         };
-        console.log("dfghjkl",todo);;
         todos.push(todo)
         todoInput.value = ""; //clear the  todo Input element 
         renderTodos(); 
@@ -73,7 +72,7 @@ function renderTodos(filter ='all'){
         p.textContent = todo.text;
         p.id = 'paragraph';
         li.appendChild(p);
-        console.log('dfghj', li)
+        // console.log('this is li', li)
 
         // li.textContent = todo.text;
         // li.className = "style";
@@ -99,7 +98,7 @@ function renderTodos(filter ='all'){
         div.appendChild(editBtn);
         editBtn.innerHTML =  '<i class="fa-solid fa-pen-to-square"></i>'
 
-        let paragraph = document.getElementById('#paragraph');
+        let paragraph = document.getElementById('paragraph');
         editBtn.addEventListener('click', () =>{
             paragraph.contentEditable = true;
         });
