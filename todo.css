@@ -79,8 +79,11 @@ h4{
     text-decoration: underline;
     color: #fff;
 }
-.filter:hover{
-    background-color: #feab6b;
+
+.active{
+    background-color: #e76f3d;
+    /* text-decoration: underline; */
+    color: #fff;
 }
 .todo-list{
     /* border: 1px solid #feab6b; */

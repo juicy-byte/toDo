@@ -7,6 +7,13 @@ var todos = [
 
 ];
 
+//remove the add task on typing.  .... done
+//enter to add  ....done
+//save after editing
+//add active class on active item ....done
+// read on oop
+
+
 function addTodo(){
     const todoInput = document.getElementById('todoInput');
     const todoInputValue = todoInput.value.trim()
@@ -24,28 +31,48 @@ function addTodo(){
         alert('Please enter a todo item')
     }
 }
-    //trying to add a scroll to textarea
 
-        // type="text/javascript">
-        // textarea = document.querySelector("todoInput");
-        // textarea.addEventListener('input', autoResize, false);
-
-        // function autoResize() {
-        //     this.style.height = 'auto';
-        //     this.style.height = this.scrollHeight + 'px';
-        // }
-        
+    // displaying todo textarea and button
 
     const inputContainer = document.getElementById('inputContainer');
     document.getElementById('addNewTask').addEventListener('click', () =>{
        if (inputContainer.style.display === 'none'){
-            inputContainer.style.display = 'block'
+            inputContainer.style.display = 'block';
+            addNewTask.style.display = 'none';
        }
        else{
         inputContainer.style.display = 'none';
+        addNewTask.style.display = 'block';
        }
         console.log('fcvshbjnpl')
     })
+
+    //add active class to filter buttons
+
+    const btnsContainer = document.getElementById('filterContainer');
+    const btns = btnsContainer.getElementsByClassName('filter');        
+        for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('click', () =>{
+            const current = document.getElementsByClassName('active');
+            if (current.length > 0){
+                current[0].classList.remove('active');
+            }
+            this.className += 'active';
+
+  });
+}
+
+    // enter to add ;lI
+
+    const inputTodo = document.getElementById("todoInput")
+    inputTodo.addEventListener("keypress", function(event) {
+        if(event.key === 'Enter'){
+            event.preventDefault();
+            document.getElementById("addTodoBtn").click();
+        }  
+      });
+
+
 
     // time and date widget
     options = {
@@ -55,6 +82,9 @@ function addTodo(){
       const clock = () => dateTime.innerText=new Intl.DateTimeFormat('en-EN', options).format(new Date())
       clock()
       setInterval(clock, 1000);
+
+
+
   
 
 function renderTodos(filter ='all'){
@@ -72,6 +102,7 @@ function renderTodos(filter ='all'){
         p.textContent = todo.text;
         p.id = 'paragraph';
         li.appendChild(p);
+
         // console.log('this is li', li)
 
         // li.textContent = todo.text;
@@ -79,7 +110,7 @@ function renderTodos(filter ='all'){
         if(todo.completed){
             li.classList.add('completed');
         }
-        
+
         const div = document.createElement('div');
         div.classList.add('li-button-container');
 
@@ -99,8 +130,10 @@ function renderTodos(filter ='all'){
         editBtn.innerHTML =  '<i class="fa-solid fa-pen-to-square"></i>'
 
         let paragraph = document.getElementById('paragraph');
+        // console.log('paragraph', p);
         editBtn.addEventListener('click', () =>{
-            paragraph.contentEditable = true;
+            p.contentEditable = true;
+            console.log('consoler');
         });
 
         // Add btn that deolets todo
@@ -121,12 +154,14 @@ function renderTodos(filter ='all'){
             }     
         })
 
+
+
         li.appendChild(p);
         li.appendChild(div);
         todosList.appendChild(li);
 
         
-        });
+    });
 }
 
 function toggleCompleteTodo(index){
@@ -152,5 +187,4 @@ function filterCompleted(){
 
 function filterPending(){
     renderTodos('pending')
-}
-////if you click on the button to delete, an error message will pop up to say 'if you delete, you cant recover, then you click an agree or ok button.'
+};
